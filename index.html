@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Void Interceptor — Space Shooter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_1.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="Space_Shooting_Game_Background_Video (online-video-cutter.com).mp4" type="video/mp4">
+    </video>
+    <div id="vignette"></div>
+
+    <div id="wrap">
+
+        <header id="topbar">
+            <h1>VOID <span>INTERCEPTOR</span></h1>
+            <p class="sub">◄ ► move &nbsp;·&nbsp; SPACE fire &nbsp;·&nbsp; P pause</p>
+        </header>
+
+        <div id="gameArea">
+
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+            <!-- HUD -->
+            <div id="hud">
+                <div class="hud-panel" id="scorePanel">
+                    <span class="hud-label">SCORE</span>
+                    <span class="hud-value" id="score">0</span>
+                </div>
+                <div class="hud-panel" id="livesPanel">
+                    <span class="hud-label">HULL</span>
+                    <span id="lives">❤❤❤</span>
+                </div>
+                <div class="hud-panel" id="levelPanel">
+                    <span class="hud-label">LV</span>
+                    <span class="hud-value" id="level">1</span>
+                </div>
+            </div>
+
+            <div id="powerupBanner" class="hidden">RAPID FIRE ONLINE</div>
+
+            <!-- Start screen -->
+            <div id="startScreen" class="overlay">
+                <h2>VOID INTERCEPTOR</h2>
+                <p>Pilot the interceptor. Destroy the incoming swarm.<br>Collect <span class="cyan">rapid-fire cores</span> to overcharge your cannon.</p>
+                <p class="hi">Best score: <span id="hiscoreStart">0</span></p>
+                <button id="startBtn" class="btn">LAUNCH MISSION</button>
+            </div>
+
+            <!-- Pause screen -->
+            <div id="pauseScreen" class="overlay hidden">
+                <h2>PAUSED</h2>
+                <button id="resumeBtn" class="btn">RESUME</button>
+            </div>
+
+            <!-- Game over screen -->
+            <div id="gameOverScreen" class="overlay hidden">
+                <h2>SHIP DESTROYED</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p class="hi">Best score: <span id="hiscoreEnd">0</span></p>
+                <button id="restartBtn" class="btn">RELAUNCH</button>
+            </div>
+
+        </div>
+
+        <!-- Touch controls -->
+        <div id="touchControls">
+            <button id="btnLeft" class="pad" aria-label="Move left">◄</button>
+            <button id="btnFire" class="pad fire" aria-label="Fire">●</button>
+            <button id="btnRight" class="pad" aria-label="Move right">►</button>
+        </div>
+
+        <button id="pauseBtn" aria-label="Pause">❚❚</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
