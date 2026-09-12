@@ -311,3 +311,27 @@ h1 span {
     .sub { display: none; }
     #topbar { margin-bottom: -4px; }
 }
+
+.download-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+}
